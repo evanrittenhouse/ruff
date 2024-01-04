@@ -222,7 +222,7 @@ impl Configuration {
             unsafe_fixes: self.unsafe_fixes.unwrap_or_default(),
             output_format: self.output_format.unwrap_or_default(),
             show_fixes: self.show_fixes.unwrap_or(false),
-            show_source: self.show_source.unwrap_or(false),
+            show_source: self.show_source.unwrap_or(true),
 
             file_resolver: FileResolverSettings {
                 exclude: FilePatternSet::try_from_iter(

@@ -121,6 +121,12 @@ fn stdin_error() {
     exit_code: 1
     ----- stdout -----
     -:1:8: F401 [*] `os` imported but unused
+      |
+    1 | import os
+      |        ^^ F401
+      |
+      = help: Remove unused import: `os`
+
     Found 1 error.
     [*] 1 fixable with the `--fix` option.
 
@@ -139,6 +145,12 @@ fn stdin_filename() {
     exit_code: 1
     ----- stdout -----
     F401.py:1:8: F401 [*] `os` imported but unused
+      |
+    1 | import os
+      |        ^^ F401
+      |
+      = help: Remove unused import: `os`
+
     Found 1 error.
     [*] 1 fixable with the `--fix` option.
 
@@ -190,6 +202,12 @@ fn check_warn_stdin_filename_with_files() {
     exit_code: 1
     ----- stdout -----
     F401.py:1:8: F401 [*] `os` imported but unused
+      |
+    1 | import os
+      |        ^^ F401
+      |
+      = help: Remove unused import: `os`
+
     Found 1 error.
     [*] 1 fixable with the `--fix` option.
 
@@ -210,6 +228,12 @@ fn stdin_source_type_py() {
     exit_code: 1
     ----- stdout -----
     TCH.py:1:8: F401 [*] `os` imported but unused
+      |
+    1 | import os
+      |        ^^ F401
+      |
+      = help: Remove unused import: `os`
+
     Found 1 error.
     [*] 1 fixable with the `--fix` option.
 
@@ -526,7 +550,19 @@ fn stdin_override_parser_ipynb() {
     exit_code: 1
     ----- stdout -----
     Jupyter.py:cell 1:1:8: F401 [*] `os` imported but unused
+      |
+    1 | import os
+      |        ^^ F401
+      |
+      = help: Remove unused import: `os`
+
     Jupyter.py:cell 3:1:8: F401 [*] `sys` imported but unused
+      |
+    1 | import sys
+      |        ^^^ F401
+      |
+      = help: Remove unused import: `sys`
+
     Found 2 errors.
     [*] 2 fixable with the `--fix` option.
 
@@ -550,6 +586,12 @@ fn stdin_override_parser_py() {
     exit_code: 1
     ----- stdout -----
     F401.ipynb:1:8: F401 [*] `os` imported but unused
+      |
+    1 | import os
+      |        ^^ F401
+      |
+      = help: Remove unused import: `os`
+
     Found 1 error.
     [*] 1 fixable with the `--fix` option.
 
@@ -572,6 +614,14 @@ fn stdin_fix_when_not_fixable_should_still_print_contents() {
 
     ----- stderr -----
     -:3:4: F634 If test is a tuple, which is always `True`
+      |
+    1 | import sys
+    2 | 
+    3 | if (1, 2):
+      |    ^^^^^^ F634
+    4 |      print(sys.version)
+      |
+
     Found 2 errors (1 fixed, 1 remaining).
     "###);
 }

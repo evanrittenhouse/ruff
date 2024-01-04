@@ -109,7 +109,7 @@ pub struct Options {
     /// Whether to show source code snippets when reporting lint violations
     /// (overridden by the `--show-source` command-line flag).
     #[option(
-        default = "false",
+        default = "true",
         value_type = "bool",
         example = r#"
             # By default, always show source code snippets.

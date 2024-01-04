@@ -44,7 +44,7 @@ impl Default for Settings {
             fix_only: false,
             output_format: SerializationFormat::default(),
             show_fixes: false,
-            show_source: false,
+            show_source: true,
             unsafe_fixes: UnsafeFixes::default(),
             linter: LinterSettings::new(project_root),
             file_resolver: FileResolverSettings::new(project_root),
